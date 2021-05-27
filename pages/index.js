@@ -1,26 +1,19 @@
 import Head from "next/head";
+
+import { Splash } from "../components/Splash";
+
 import styles from "../styles/Home.module.css";
 
 export default function Home({ page }) {
-  console.log("🚀 ~ file: index.js ~ line 5 ~ Home ~ page", page);
   return (
-    <div className={styles.container}>
+    <div className={styles.pageWrapper}>
       <Head>
         <title>CMS Splash Page</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href='https://nextjs.org'>Next.js!</a>
-        </h1>
-        <div className={styles.card}>
-          <h3>Airtable content &rarr;</h3>
-
-          <pre>
-            <code>{JSON.stringify(page, null, 2)}</code>
-          </pre>
-        </div>
+        <Splash data={page?.sections} />
       </main>
     </div>
   );
