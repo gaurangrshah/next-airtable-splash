@@ -9,7 +9,6 @@ export const List = ({ data }) => {
           className={styles.listItem}
           img={block?.media[0]?.fields}
         >
-          {console.log(block)}
           {block?.fields?.title}
         </ListItem>
       ))}
