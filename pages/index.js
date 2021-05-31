@@ -1,15 +1,32 @@
 import Head from "next/head";
 
 import { Splash } from "../components/Splash";
-
 import styles from "../styles/Home.module.css";
 
 export default function Home({ page }) {
+  console.log();
   return (
     <div className={styles.pageWrapper}>
       <Head>
-        <title>CMS Splash Page</title>
-        <link rel='icon' href='/favicon.ico' />
+        <title>{page?.seo[0]?.fields?.title}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content={page?.seo[0]?.fields?.description} />
+        <meta property="og:title" content={page?.seo[0]?.fields?.title} />
+        <meta
+          property="og:site_name"
+          content={page?.seo[0]?.fields?.sitename}
+        />
+        <meta property="og:url" content={page?.seo[0]?.fields?.url} />
+        <meta
+          property="og:description"
+          content={page?.seo[0]?.fields?.description}
+        />
+        <meta
+          property="og:image"
+          content={page?.seo[0]?.fields?.ogImage?.fields?.url[0]?.url}
+        />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="cannonical" href={page?.seo[0]?.fields?.url} />
       </Head>
 
       <main className={styles.main}>
@@ -20,14 +37,13 @@ export default function Home({ page }) {
 }
 
 export async function getStaticProps() {
-  // asynchronously import neccessary modules so we can avoid any client side compilation
+  // asynchronously import neccessary modules and avoid any client side evaluation
   const { getPage, getRecordById, getRelatedRecords } = await import(
     "../lib/airtable"
   );
 
   // query inital data from airtable
-  const page = await getPage("launch");
-  const [launch] = page;
+  const [launch] = await getPage("launch");
 
   // get related seo metadata
   if (launch?.fields?.seoId?.length) {
@@ -79,11 +95,11 @@ export async function getStaticProps() {
         })
       );
     }
-
-    return {
-      props: {
-        page: launch,
-      },
-    };
   }
+
+  return {
+    props: {
+      page: launch?.id && launch
+    }
+  };
 }
