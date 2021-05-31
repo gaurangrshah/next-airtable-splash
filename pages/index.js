@@ -82,7 +82,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      page: launch?.id && launch
+      page: launch?.id ? launch : []
     }
   };
 }
