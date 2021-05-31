@@ -1,26 +1,37 @@
-import styles from "../styles/Hero.module.css";
-import Image from "next/image";
+import styles from "../styles/Cta.module.css";
 
-export const Hero = ({ data }) => {
+export const Cta = ({ data, filter = [] }) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const input = e.target.querySelector("input");
+    console.log(input.value);
+  };
+
   return (
-    <div className={styles.hero}>
-      <div className={styles.heroContent}>
-        <p className={styles.lead}>{data[0]?.fields?.lead}</p>
-        <h1 className={styles.heading}>{data[0]?.fields?.title}</h1>
-        <p className={styles.excerpt}>{data[0]?.fields?.excerpt}</p>
-      </div>
-      {data[0]?.media?.length && (
-        <div className={styles.heroImage}>
-          <Image
-            layout='intrinsic'
-            src={data[0]?.media[0]?.fields?.url[0]?.url}
-            alt={data[0]?.media[0]?.fields?.alt}
-            objectFit='fill'
-            width={600}
-            height={600}
-          />
+    <div className={styles.cta}>
+      {data?.map((block) => (
+        <div key={block?.id}>
+          <h2>{block?.fields?.title}</h2>
+          <p>{block?.fields?.excerpt}</p>
+          {filter.includes("withForm") && (
+            <form onSubmit={handleSubmit}>
+              <div className={styles.inputGroup}>
+                <input
+                  type='email'
+                  placeholder='you@youremail.com'
+                  required
+                  className={styles.input}
+                />
+                <div className={styles.inputRight}>
+                  <button type='submit' className={styles.submit}>
+                    Sign up now
+                  </button>
+                </div>
+              </div>
+            </form>
+          )}
         </div>
-      )}
+      ))}
     </div>
   );
 };
