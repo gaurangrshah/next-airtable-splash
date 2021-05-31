@@ -20,7 +20,7 @@ export default function Home({ page }) {
 }
 
 export async function getStaticProps() {
-  // asynchronously import neccessary modules so we can avoid any client side compilation
+  // asynchronously import neccessary modules and avoid any client side evaluation
   const { getPage, getRecordById, getRelatedRecords } = await import(
     "../lib/airtable"
   );
@@ -39,6 +39,7 @@ export async function getStaticProps() {
     }
     launch.seo = seo;
   }
+
   // get related data if there is any
   if (launch?.fields?.sectionId?.length) {
     const sections = await getRelatedRecords(
@@ -77,11 +78,11 @@ export async function getStaticProps() {
         })
       );
     }
+  }
 
   return {
     props: {
-      page: launch && launch,
-    },
+      page: launch?.id && launch
+    }
   };
-}
 }
