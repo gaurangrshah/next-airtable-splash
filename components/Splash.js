@@ -11,19 +11,30 @@ const components = {
 export const Splash = ({ data }) => {
   if (!Array.isArray(data)) return null;
   const [hero, ...restComponents] = data;
-
   return (
     <Wrapper>
       <Container>
         {hero && (
           <Hero
-            key={hero?.id}
-            data={hero.blocks}
+            key={hero?.block_id}
+            data={{
+              id: hero?.block_id,
+              lead: hero?.block_lead,
+              title: hero?.block_title,
+              excerpt: hero?.block_excerpt,
+              content: hero?.block_content,
+              media: {
+                id: hero?.media_id,
+                title: hero?.media_title,
+                alt: hero?.media_alt,
+                url: hero?.media_url,
+              },
+            }}
             filter={hero?.fields?.filter}
           />
         )}
         <Row>
-          {restComponents.map((section) => {
+          {/* {restComponents.map((section) => {
             const Component = components[section?.fields?.type];
 
             if (section?.fields?.type.includes("list")) {
@@ -45,7 +56,7 @@ export const Splash = ({ data }) => {
               );
             }
             return null;
-          })}
+          })} */}
         </Row>
       </Container>
     </Wrapper>

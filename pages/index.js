@@ -6,7 +6,6 @@ import { removeNullValues } from "../utils/data-helpers";
 import styles from "../styles/Home.module.css";
 
 export default function Home({ page, rows, fields }) {
-  console.log();
   return (
     <div className={styles.pageWrapper}>
       <Head>
@@ -24,20 +23,23 @@ export default function Home({ page, rows, fields }) {
 
       <main className={styles.main}>
         {/* <Splash data={page?.sections} /> */}
+        <Splash data={rows} />
       </main>
     </div>
   );
 }
 
 export async function getStaticProps() {
+  const response = await fetch("http://localhost:3000/api/sections");
+  const data = await response.json();
+  const rows = removeNullValues(data?.rows);
+
+  // const { getSections } = await import("../lib/pg");
+
   // // asynchronously import neccessary modules and avoid any client side evaluation
   // const { getPage, getRecordById, getRelatedRecords } = await import(
   //   "../lib/airtable"
   // );
-  // const { getSections } = await import("../lib/pg");
-
-  const response = await fetch("http://localhost:3000/api/sections");
-  const data = await response.json();
 
   // // query inital data from airtable
   // const [launch] = await getPage("launch");
@@ -93,8 +95,6 @@ export async function getStaticProps() {
   //     );
   //   }
   // }
-
-  const rows = removeNullValues(data?.rows);
 
   return {
     props: {
