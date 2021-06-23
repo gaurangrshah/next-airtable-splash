@@ -2,61 +2,46 @@ import { Container, Wrapper, Row } from "./Containers";
 import { Hero } from "./Hero";
 import { List } from "./List";
 import { Cta } from "./Cta";
+import { groupBy, Section } from "../utils/data-helpers";
 
+// components to be used for rendering Airtable data
 const components = {
   list: List,
   cta: Cta,
 };
 
 export const Splash = ({ data }) => {
+
   if (!Array.isArray(data)) return null;
-  const [hero, ...restComponents] = data;
+
+  // transform Airatble data
+  const sections = data.map((section) => {
+    return new Section(section);
+  });
+  const [hero, ...rest] = sections;
+  const restSections = rest?.length ? groupBy(rest, "type") : rest;
+
   return (
     <Wrapper>
       <Container>
         {hero && (
           <Hero
-            key={hero?.block_id}
-            data={{
-              id: hero?.block_id,
-              lead: hero?.block_lead,
-              title: hero?.block_title,
-              excerpt: hero?.block_excerpt,
-              content: hero?.block_content,
-              media: {
-                id: hero?.media_id,
-                title: hero?.media_title,
-                alt: hero?.media_alt,
-                url: hero?.media_url,
-              },
-            }}
-            filter={hero?.fields?.filter}
+            key={hero?.block?.id}
+            data={hero?.block}
+            filter={hero?.filter}
           />
         )}
         <Row>
-          {/* {restComponents.map((section) => {
-            const Component = components[section?.fields?.type];
-
-            if (section?.fields?.type.includes("list")) {
-              return (
-                <Component
-                  key={`${section?.id}-${section?.order}`}
-                  data={section?.blocks}
-                  filter={section?.fields?.filter}
-                />
-              );
-            }
-            if (section?.fields?.type.includes("cta")) {
-              return (
-                <Component
-                  key={`${section?.id}-${section?.order}`}
-                  data={section?.blocks}
-                  filter={section?.fields?.filter}
-                />
-              );
-            }
-            return null;
-          })} */}
+          {Object.keys(restSections)?.map((key, i) => {
+            const Component = components[key]; // component to use for rendering
+            const section = restSections[key]; // section to be rendered
+            return (
+              <Component
+                key={`section-${section[i]?.block?.id}`}
+                data={section}
+              />
+            );
+          })}
         </Row>
       </Container>
     </Wrapper>
