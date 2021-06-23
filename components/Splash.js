@@ -11,14 +11,15 @@ const components = {
 };
 
 export const Splash = ({ data }) => {
-
   if (!Array.isArray(data)) return null;
 
   // transform Airatble data
   const sections = data.map((section) => {
-    return new Section(section);
+    return new Section(section); // create section from queried data
   });
   const [hero, ...rest] = sections;
+
+  // group remaining sections if they have the same type
   const restSections = rest?.length ? groupBy(rest, "type") : rest;
 
   return (
