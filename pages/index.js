@@ -36,7 +36,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      rows,
+      rows: rows?.length ? rows : [],
     },
   };
 }
