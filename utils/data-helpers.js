@@ -16,6 +16,13 @@ export function isEmpty(value) {
   );
 }
 
+export function groupBy(arr, key) {
+  return arr.reduce(function (rv, x) {
+    (rv[x[key]] = rv[x[key]] || []).push(x);
+    return rv;
+  }, {});
+}
+
 export function Section(data) {
   return {
     id: data?.section_id || "",
@@ -38,10 +45,3 @@ export function Section(data) {
     },
   };
 }
-
-export function groupBy(arr, key) {
-  return arr.reduce(function(rv, x) {
-    (rv[x[key]] = rv[x[key]] || []).push(x);
-    return rv;
-  }, {});
-};
