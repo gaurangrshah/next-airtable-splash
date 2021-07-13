@@ -1,5 +1,6 @@
-import styles from "../styles/Hero.module.css";
 import Image from "next/image";
+
+import styles from "../../styles/splash/Hero.module.css";
 
 export const Hero = ({ data }) => {
   return (

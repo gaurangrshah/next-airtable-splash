@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "../styles/List.module.css";
+import styles from "../../styles/splash/List.module.css";
 
 export const List = ({ data }) => {
   return (

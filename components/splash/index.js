@@ -1,8 +1,8 @@
-import { Container, Wrapper, Row } from "./Containers";
+import { Container, Wrapper, Row } from "../Containers";
 import { Hero } from "./Hero";
 import { List } from "./List";
 import { Cta } from "./Cta";
-import { groupBy, Section } from "../utils/data-helpers";
+import { groupBy, Section } from "../../utils/data-helpers";
 
 // components to be used for rendering Airtable data
 const components = {

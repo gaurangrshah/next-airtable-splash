@@ -1,4 +1,4 @@
-import styles from "../styles/Cta.module.css";
+import styles from "../../styles/splash/Cta.module.css";
 
 export const Cta = ({ data }) => {
   const handleSubmit = (e) => {
