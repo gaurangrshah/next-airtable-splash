@@ -23,8 +23,16 @@
   align-items: center;
 }
 
-@media (max-width: 48em) {
+@media (max-width: 720px) {
   .flexRow {
     flex-direction: column-reverse;
   }
+}
+
+.section {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 20vh;
+  border: var(--debug);
 }

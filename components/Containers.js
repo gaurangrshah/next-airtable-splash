@@ -10,7 +10,7 @@ export const Wrapper = ({ children, ...props }) => {
 
 export const Container = ({ classes = [], children, ...props }) => {
   return (
-    <div className={[styles.container, ...classes].join()} {...props}>
+    <div className={[styles.container, ...classes].join(" ")} {...props}>
       {children}
     </div>
   );
@@ -18,8 +18,16 @@ export const Container = ({ classes = [], children, ...props }) => {
 
 export const Row = ({ classes = [], children, ...props }) => {
   return (
-    <div className={[styles.flexRow, ...classes].join()} {...props}>
+    <div className={[styles.flexRow, ...classes].join(" ")} {...props}>
       {children}
     </div>
+  );
+};
+
+export const Section = ({ classes = [], children, ...props }) => {
+  return (
+    <section className={[styles.section, ...classes].join(" ")} {...props}>
+      {children}
+    </section>
   );
 };

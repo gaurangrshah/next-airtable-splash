@@ -1,0 +1,148 @@
+/* Modular scale and media queries:
+  @link: https://vanseodesign.com/css/custom-properties-media-queries/
+*/
+
+.container {
+  position: "relative";
+  width: 80%;
+  max-width: var(--mw);
+  margin: 0 auto;
+  padding: 0 0.5rem;
+  /* border: 1px solid var(--border-color); */
+}
+
+.header {
+  top: 0;
+  width: 100%;
+  height: 80px;
+  border-top: 1px solid #eaeaea;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--light);
+}
+
+.header nav {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0 0.5em;
+  flex: 1;
+}
+
+.brand {
+  width: 100%;
+  padding: 0 0.5em;
+  margin: 0;
+  margin-left: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+.brand a {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 0.5em;
+  margin: 0;
+  margin-left: 0.5rem;
+}
+
+.brand h3 {
+  color: var(--accent);
+}
+
+.brand img {
+  display: inline;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.main {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: calc(100vw - 16px);
+  height: 100vh;
+  /* padding: 5rem 0; */
+  overflow-x: hidden;
+}
+
+.pageWrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--gray400);
+}
+
+.footer {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--light);
+  background: var(--bars);
+}
+
+.footer img {
+  margin-left: 0.5rem;
+}
+
+.footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer span {
+  padding: 0 0.15em;
+  color: var(--accent);
+}
+
+@media (min-width: 540px) and (max-width: 720px) {
+  .pageWrapper {
+    --modular-scale: 0.5;
+    --border-color: blue;
+  }
+  .container {
+    --container-mw: var(--breakpoint-sm);
+  }
+}
+@media (min-width: 720px) and (max-width: 960px) {
+  .pageWrapper {
+    --modular-scale: 0.95;
+    --border-color: green;
+  }
+  .container {
+    --container-mw: var(--breakpoint-lg);
+  }
+}
+
+@media (min-width: 960px) and (max-width: 1140px) {
+  .pageWrapper {
+    --modular-scale: 1.414;
+    --border-color: yellow;
+  }
+  .container {
+    --container-mw: var(--breakpoint-lg);
+  }
+}
+
+@media (min-width: 1140px) {
+  .pageWrapper {
+    --modular-scale: 1.46;
+    --border-color: lightblue;
+  }
+  .container {
+    --container-mw: var(--breakpoint-xl);
+  }
+}

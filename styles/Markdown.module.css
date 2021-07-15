@@ -1,0 +1,21 @@
+.markdown {
+  padding: 1em 1em;
+  list-style-type: none;
+  list-style-image: url('/check.png');
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 3;
+}
+
+.markdown li {
+  color: var(--gray200);
+  padding-left: 1em;
+  font-size: 0.65em;
+}
+.markdown li:first-child {
+  color: var(--accent);
+  padding-left: 1em;
+  font-weight: 700;
+
+}

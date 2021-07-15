@@ -2,7 +2,7 @@ import { Container, Wrapper, Row } from "../Containers";
 import { Hero } from "./Hero";
 import { List } from "./List";
 import { Cta } from "./Cta";
-import { groupBy, Section } from "../../utils/data-helpers";
+import { groupBy, SECTION } from "../../utils/data-helpers";
 
 // components to be used for rendering Airtable data
 const components = {
@@ -15,7 +15,7 @@ export const Splash = ({ data }) => {
 
   // transform Airatble data
   const sections = data.map((section) => {
-    return new Section(section); // create section from queried data
+    return new SECTION(section); // create section from queried data
   });
   const [hero, ...rest] = sections;
 

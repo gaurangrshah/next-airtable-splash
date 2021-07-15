@@ -3,7 +3,7 @@ import Head from "next/head";
 import { Splash } from "../components/splash";
 import { removeNullValues } from "../utils/data-helpers";
 
-import styles from "../styles/splash/Home.module.css";
+import styles from "../styles/Home.module.css";
 
 export default function Home({ rows }) {
   console.log("🚀 ~ file: index.js ~ line 9 ~ Home ~ rows", rows);
