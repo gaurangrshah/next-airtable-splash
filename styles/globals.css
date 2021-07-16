@@ -6,7 +6,8 @@
   --dark: #000000;
   --accent-light: #9ae6b4;
   --accent-dark: #276749;
-  --primary-light: #f5e3a3;
+  --primary-light: #faf4dd;
+  --primary-lighter: #fffcf1;
   --primary-dark: #deb317;
   --secondary-light: #ebf8ff;
   --secondary-dark: #009ff5;
@@ -37,29 +38,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-  color: var(--gray100);
-}
 
-a.button {
-  text-decoration: none;
-  display: inline-block;
-  height: 40px;
-  padding: 0 0.5em;
-  font-weight: 600;
-  border-radius: 6px;
-  white-space: nowrap;
-  cursor: pointer;
-  text-align: center;
-  transition: 0.2s ease;
-  text-transform: capitalize;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: currentColor;
-}
 
 *,
 *::before,
@@ -101,12 +80,40 @@ button:hover {
   cursor: pointer;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+  color: var(--gray100);
+}
+
+a.button {
+  text-decoration: none;
+  display: inline-block;
+  height: 40px;
+  padding: 0 0.5em;
+  font-weight: 600;
+  border-radius: 6px;
+  white-space: nowrap;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.2s ease;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: currentColor;
+}
+
 .primary {
   background: var(--primary);
   color: var(--dark);
 }
 .primary-light {
   background: var(--primary-light);
+  color: var(--dark);
+}
+.primary-lighter {
+  background: var(--primary-lighter);
   color: var(--dark);
 }
 .primary-dark {
@@ -136,10 +143,6 @@ button:hover {
 .accent-dark {
   background: var(--accent-dark);
   color: var(--light);
-}
-
-.center-text {
-  text-align: "center";
 }
 
 @media (max-width: 720px) {

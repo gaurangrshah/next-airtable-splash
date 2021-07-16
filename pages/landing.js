@@ -1,5 +1,5 @@
 import { SEO } from "../components/SEO";
-import { Container, Section } from "../components/Containers";
+import { Container, Section, Row } from "../components/Containers";
 import {
   BrandList,
   BenefitsCards,
@@ -12,6 +12,7 @@ import {
   Testimonial,
   PricesHeading,
 } from "../components/landing";
+import { Link } from "../components/Link";
 
 import { PageBuild, sortRows } from "../utils/data-helpers";
 
@@ -39,8 +40,8 @@ export default function Landing({ page }) {
   const [featuredTestimonial] = landingFeaturedTestimonial;
 
   console.log(
-    "🚀 ~ file: landing.js ~ line 131 ~ Landing ~ landingFeaturedTestimonial",
-    landingFeaturedBenefit1[0]["filter"]
+    "🚀 ~ file: landing.js ~ line 131 ~ Landing ~ landingCtaUrgency",
+    landingCtaUrgency
   );
 
   const [pricesHeading, ...restPricing] = landingPricing.sort((a, b) =>
@@ -70,7 +71,7 @@ export default function Landing({ page }) {
               )}
             />
           </Container>
-          <Testimonial block={landingFeaturedTestimonial[0].block} />
+          <Testimonial block={featuredTestimonial.block} />
         </Section>
         <Section>
           <Container>
@@ -117,8 +118,32 @@ export default function Landing({ page }) {
             />
           </Container>
         </Section>
-        <Section>
+        <Section className='primary-lighter'>
           {/* @TODO: add final cta section -- then refactor / cleanup  */}
+          <Container style={{ margin: "4em auto" }}>
+            <Row
+              className='imgHolder'
+              style={{
+                width: "100%",
+                flexDirection: "column",
+                justifyContent: "center",
+              }}
+            >
+              <img
+                src={landingCtaUrgency[0].block.media.url[0]}
+                alt={landingCtaUrgency[0].block.media.alt}
+                width='300px'
+              />
+              <SectionHeading
+                title={landingCtaUrgency[0].block.title}
+                excerpt={landingCtaUrgency[0].block.excerpt}
+                align='center'
+              />
+              <Link className="button accent"  href={landingCtaUrgency[0].block.links.href}>
+                {landingCtaUrgency[0].block.links.title}
+              </Link>
+            </Row>
+          </Container>
         </Section>
       </main>
       <footer className={styles.footer}>
