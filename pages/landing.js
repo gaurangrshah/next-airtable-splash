@@ -8,14 +8,12 @@ import {
   Hero,
   Pricing,
   RiskCta,
-  SectionHeading,
   Testimonial,
   PricesHeading,
+  UrgencyCta,
 } from "../components/landing";
-import { Link } from "../components/Link";
 
 import { PageBuild, sortRows } from "../utils/data-helpers";
-
 import styles from "../styles/Landing.module.css";
 
 export default function Landing({ page }) {
@@ -31,18 +29,10 @@ export default function Landing({ page }) {
     { landingFeaturedBenefit3 },
     { landingCtaRisk },
     { landingPricing },
-    {
-      /* @TODO: add final cta section -- then refactor / cleanup  */
-      landingCtaUrgency,
-    },
+    { landingCtaUrgency },
   ] = sortRows(rows);
 
   const [featuredTestimonial] = landingFeaturedTestimonial;
-
-  console.log(
-    "🚀 ~ file: landing.js ~ line 131 ~ Landing ~ landingCtaUrgency",
-    landingCtaUrgency
-  );
 
   const [pricesHeading, ...restPricing] = landingPricing.sort((a, b) =>
     a.block.order > b.block.order ? 1 : -1
@@ -55,16 +45,12 @@ export default function Landing({ page }) {
       <main className={styles.main}>
         <Section style={{ padding: "2em", textAlign: "center" }}>
           <Hero block={landingHero[0]?.block} />
-          <Container>{/* <BrandList data={landingBrandList} /> */}</Container>
+          <Container>{<BrandList data={landingBrandList} />}</Container>
         </Section>
         <Section className='secondary-light'>
           <Container>
-            <SectionHeading
-              title={landingBenefitsIntro[0].block.title}
-              excerpt={landingBenefitsIntro[0].block.excerpt}
-              align='center'
-            />
             <BenefitsCards
+              headingBlock={landingBenefitsIntro[0].block}
               data={landingBenefits.sort((a, b) =>
                 // sort by block order ASC
                 a.block.order > b.block.order ? 1 : -1
@@ -119,30 +105,8 @@ export default function Landing({ page }) {
           </Container>
         </Section>
         <Section className='primary-lighter'>
-          {/* @TODO: add final cta section -- then refactor / cleanup  */}
           <Container style={{ margin: "4em auto" }}>
-            <Row
-              className='imgHolder'
-              style={{
-                width: "100%",
-                flexDirection: "column",
-                justifyContent: "center",
-              }}
-            >
-              <img
-                src={landingCtaUrgency[0].block.media.url[0]}
-                alt={landingCtaUrgency[0].block.media.alt}
-                width='300px'
-              />
-              <SectionHeading
-                title={landingCtaUrgency[0].block.title}
-                excerpt={landingCtaUrgency[0].block.excerpt}
-                align='center'
-              />
-              <Link className="button accent"  href={landingCtaUrgency[0].block.links.href}>
-                {landingCtaUrgency[0].block.links.title}
-              </Link>
-            </Row>
+            <UrgencyCta block={landingCtaUrgency[0].block} />
           </Container>
         </Section>
       </main>

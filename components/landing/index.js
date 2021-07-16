@@ -8,3 +8,4 @@ export * from "./Pricing";
 export * from "./RiskCta";
 export * from "./SectionHeading";
 export * from "./Testimonial";
+export * from "./UrgencyCta";
