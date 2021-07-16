@@ -1,5 +1,5 @@
-export * from "./BrandList";
 export * from "./BenefitsCards";
+export * from "./BrandList";
 export * from "./Card";
 export * from "./FeaturedBenefit";
 export * from "./Header";

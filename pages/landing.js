@@ -1,19 +1,17 @@
-import { Section } from "../components/Containers";
+import { SEO } from "../components/SEO";
+import { Container, Section } from "../components/Containers";
 import {
   BrandList,
   BenefitsCards,
-  Card,
   FeaturedBenefit,
-  HeaderContent,
+  Header,
   Hero,
   Pricing,
-  PricingCard,
   RiskCta,
   SectionHeading,
   Testimonial,
   PricesHeading,
 } from "../components/landing";
-import { SEO } from "../components/SEO";
 
 import { PageBuild, sortRows } from "../utils/data-helpers";
 
@@ -32,12 +30,19 @@ export default function Landing({ page }) {
     { landingFeaturedBenefit3 },
     { landingCtaRisk },
     { landingPricing },
-    { landingCtaUrgency },
+    {
+      /* @TODO: add final cta section -- then refactor / cleanup  */
+      landingCtaUrgency,
+    },
   ] = sortRows(rows);
+
+  const [featuredTestimonial] = landingFeaturedTestimonial;
+
   console.log(
-    "🚀 ~ file: landing.js ~ line 146 ~ Landing ~ landingCtaUrgency",
-    landingCtaUrgency
+    "🚀 ~ file: landing.js ~ line 131 ~ Landing ~ landingFeaturedTestimonial",
+    landingFeaturedBenefit1[0]["filter"]
   );
+
   const [pricesHeading, ...restPricing] = landingPricing.sort((a, b) =>
     a.block.order > b.block.order ? 1 : -1
   );
@@ -45,104 +50,75 @@ export default function Landing({ page }) {
   return (
     <div className={styles.pageWrapper}>
       <SEO seo={seo} />
-      <header className={styles.header}>
-        <div className={styles.container}>
-          <div className={styles.brand}>
-            <HeaderContent brandName={seo?.title} />
-          </div>
-        </div>
-      </header>
+      <Header brandName={seo?.title} />
       <main className={styles.main}>
         <Section style={{ padding: "2em", textAlign: "center" }}>
-          <div className={styles.container}>
-            <Hero block={landingHero[0]?.block} />
-          </div>
-          <div className={styles.container}>
-            <BrandList
-              data={landingBrandList}
-              render={(listItem) => (
-                <img
-                  key={listItem.block.media.id}
-                  src={listItem.block.media.url[0]}
-                  alt={listItem.block.media.alt}
-                  height='50px'
-                />
-              )}
-            />
-          </div>
+          <Hero block={landingHero[0]?.block} />
+          <Container>{/* <BrandList data={landingBrandList} /> */}</Container>
         </Section>
-        <Section classes={["secondary-light"]}>
-          <div className={styles.container}>
+        <Section className='secondary-light'>
+          <Container>
             <SectionHeading
               title={landingBenefitsIntro[0].block.title}
               excerpt={landingBenefitsIntro[0].block.excerpt}
+              align='center'
             />
             <BenefitsCards
               data={landingBenefits.sort((a, b) =>
                 // sort by block order ASC
                 a.block.order > b.block.order ? 1 : -1
               )}
-              render={(benefit) => (
-                <Card key={benefit.block.id} block={benefit.block} />
-              )}
             />
-          </div>
-          <Testimonial
-            block={landingFeaturedTestimonial[0].block}
-            isFeatured={landingFeaturedTestimonial[0].filter[0]}
-          />
+          </Container>
+          <Testimonial block={landingFeaturedTestimonial[0].block} />
         </Section>
         <Section>
-          <div className={styles.container}>
+          <Container>
             <FeaturedBenefit
               block={landingFeaturedBenefit1[0].block}
-              alternate={landingFeaturedBenefit1[0].filter.includes("reverse")}
+              alternate={landingFeaturedBenefit1[0]["filter"].includes(
+                "reverse"
+              )}
             />
-          </div>
+          </Container>
           <div style={{ width: "100%", background: "var(--primary-light)" }}>
-            <div className={styles.container}>
+            <Container>
               <FeaturedBenefit
                 block={landingFeaturedBenefit2[0].block}
-                alternate={landingFeaturedBenefit2[0].filter.includes(
+                alternate={landingFeaturedBenefit2[0]["filter"].includes(
                   "reverse"
                 )}
               />
-            </div>
+            </Container>
           </div>
-          <div className={styles.container}>
+          <Container>
             <FeaturedBenefit
               block={landingFeaturedBenefit3[0].block}
-              alternate={landingFeaturedBenefit3[0].filter.includes("reverse")}
+              alternate={landingFeaturedBenefit3[0]["filter"].includes(
+                "reverse"
+              )}
             />
-          </div>
+          </Container>
           <div style={{ width: "100%", background: "var(--secondary-light)" }}>
-            <div className={styles.container}>
+            <Container>
               <RiskCta block={landingCtaRisk[0].block} />
-            </div>
+            </Container>
           </div>
         </Section>
         <Section>
-          <div
-            className={styles.container}
-            style={{ textAlign: "center", padding: "3em 0" }}
-          >
-            <PricesHeading block={pricesHeading.block} />
-          </div>
-          <div className={styles.container}>
+          <PricesHeading block={pricesHeading.block} />
+
+          <Container>
             <Pricing
               // we know the array always has 3 prices in it
-              // so if we sort it by the price, then the middle value
               data={restPricing.sort((a, b) => (a.title > b.title ? 1 : -1))}
+              // so if we sort it by the price, then the middle value
               // at index: 1 is the featured price value.
-              render={(pricing, i) => (
-                <PricingCard
-                  key={`${pricing.id}-${i}`}
-                  pricing={pricing}
-                  isFeatured={i === 1}
-                />
-              )}
             />
-          </div>
+          </Container>
+        </Section>
+        <Section>
+          {/* @TODO: add final cta section -- then refactor / cleanup  */}
         </Section>
       </main>
       <footer className={styles.footer}>

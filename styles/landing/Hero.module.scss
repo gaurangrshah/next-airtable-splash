@@ -1,0 +1,26 @@
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    line-height: 1.4;
+  }
+  h3 {
+    width: 70%;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  img {
+    margin: 6em 0;
+
+  }
+}
+
+.btnWrap {
+  width: 10em;
+  margin: 0 auto;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}

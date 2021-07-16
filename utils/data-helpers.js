@@ -1,11 +1,11 @@
 export function camelize(str) {
+  // takes kebab-case slugs and converts to camelCase
   let arr = str.split("-");
   let capital = arr.map((item, index) =>
     index
       ? item.charAt(0).toUpperCase() + item.slice(1).toLowerCase()
       : item.toLowerCase()
   );
-  // ^-- change here.
   let capitalString = capital.join("");
 
   return capitalString;
@@ -21,6 +21,7 @@ export function removeNullValues(arr) {
 }
 
 export function isEmpty(value) {
+  // checks if an actaul value is present, used to root out false positives.
   return (
     value === undefined ||
     value === null ||
@@ -30,6 +31,7 @@ export function isEmpty(value) {
 }
 
 export function groupBy(arr, key) {
+  // groups objests in array into grouped arrays based on matching key
   return arr.reduce(function (rv, x) {
     (rv[x[key]] = rv[x[key]] || []).push(x);
 
@@ -38,6 +40,7 @@ export function groupBy(arr, key) {
 }
 
 export function sortRows(rows) {
+  // used to group and camelCase an array of airtable rows, by their matching titles
   const interim = groupBy(rows, "title");
   return Object.keys(interim)?.map((key) => {
     const newKey = camelize(key);
@@ -48,6 +51,8 @@ export function sortRows(rows) {
 }
 
 export function SECTION(data) {
+  // used to return a specific shape from requested airtable data
+  // used on Splash Page ("/")
   return {
     id: data?.section_id || "",
     title: data?.section_title || "",
@@ -71,6 +76,8 @@ export function SECTION(data) {
 }
 
 export function Seo(row) {
+  // used to extract the seo from a page into a single object
+  // used on Landing Page ("/")
   return {
     id: row?.seo_id || "",
     title: row?.seo_title || "",
@@ -83,6 +90,8 @@ export function Seo(row) {
 }
 
 export function Page(row) {
+  // used to return a specific shape from requested airtable data
+  // used on Landing Page ("/")
   return {
     id: row?.section_id || "",
     title: row?.section_title || "",
@@ -116,6 +125,8 @@ export function Page(row) {
 }
 
 export function PageBuild(rows) {
+  // handles all landing page data transformStyle
+  // returns page and seo
   const seo = new Seo(rows[0]);
   return {
     seo,

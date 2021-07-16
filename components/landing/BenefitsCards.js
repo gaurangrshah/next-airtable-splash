@@ -1,9 +1,15 @@
 import { Row } from "../Containers";
+import { Card } from "./Card";
+import styles from "../../styles/landing/Card.module.scss";
 
-export function BenefitsCards({ data, render }) {
+export function BenefitsCards({ data, render = renderBenefits }) {
   return (
-    <Row style={{ margin: "6em auto", alignItems: "stretch" }}>
-      {data.map(render)}
-    </Row>
+    <>
+      <Row className={styles.benefitsRow}>{data.map(render)}</Row>
+    </>
   );
+}
+
+export function renderBenefits(benefit) {
+  return <Card key={benefit.block.id} block={benefit.block} />;
 }

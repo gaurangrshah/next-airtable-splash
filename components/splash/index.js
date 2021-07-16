@@ -32,7 +32,7 @@ export const Splash = ({ data }) => {
             filter={hero?.filter}
           />
         )}
-        <Row>
+        <Row className="resp">
           {Object.keys(restSections)?.map((key, i) => {
             const Component = components[key]; // component to use for rendering
             const section = restSections[key]; // section to be rendered

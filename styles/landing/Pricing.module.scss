@@ -1,0 +1,53 @@
+.pricesHeading {
+  text-align: center;
+  padding: 3em 0;
+  h2 {
+    width: 80%;
+    font-size: xx-large;
+    margin: 0 auto;
+  }
+  p {
+    width: 60%;
+    margin: 2em auto;
+    line-height: 1.6;
+  }
+}
+
+.pricesContainer {
+  text-align: center;
+  padding: 3em 0;
+  border: 1px solid red;
+  div {
+    margin: 1em 2em;
+    gap: 0.25em;
+  }
+}
+
+.cardWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0px 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.pricepoint {
+  h2 {
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+  }
+  small {
+    color: var(--gray100);
+  }
+  .excerpt {
+    max-width: 70%;
+    margin: 1.5em auto;
+    color: var(--gray100);
+    line-height: 1.4;
+  }
+}

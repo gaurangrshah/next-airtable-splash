@@ -6,7 +6,6 @@ import { removeNullValues } from "../utils/data-helpers";
 import styles from "../styles/Home.module.css";
 
 export default function Home({ rows }) {
-  console.log("🚀 ~ file: index.js ~ line 9 ~ Home ~ rows", rows);
   return (
     <div className={styles.pageWrapper}>
       <Head>

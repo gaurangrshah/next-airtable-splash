@@ -1,15 +1,21 @@
-import { Button } from "../Button";
+import { Link } from "../Link";
+import styles from "../../styles/landing/Header.module.scss";
 
-export function HeaderContent({ brandName }) {
+export function Header({ brandName }) {
   return (
     <>
-      <a href='/'>
-        <img src='/logo-holder.svg' width='32px' height='32px' />
-        <h3>{brandName.toUpperCase()}</h3>
-      </a>
-      <nav aria-label='primary'>
-        <Button>CLICK HERE</Button>
-      </nav>
+      <header className={styles.header}>
+        <Link href='/'>
+          <img src='/logo-holder.svg' width='32px' height='32px' />
+          <h3>{brandName}</h3>
+        </Link>
+
+        <nav aria-label='primary'>
+          <Link className='button primary' href='#'>
+            CLICK HERE
+          </Link>
+        </nav>
+      </header>
     </>
   );
 }
