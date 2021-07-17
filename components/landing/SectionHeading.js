@@ -1,13 +1,32 @@
 import styles from "../../styles/landing/SectionHeading.module.scss";
 
-export const SectionHeading = ({ lead, title, excerpt, align }) => {
+export const SectionHeading = ({
+  lead,
+  title,
+  excerpt,
+  align,
+  titleProps,
+  color,
+  ...rest
+}) => {
   align = align ? align : "initial";
   return (
     <>
-      <div className={styles.headingWrap} style={{ textAlign: align }}>
-        {lead && <p style={{ textAlign: align }}>{lead}</p>}
-        {title && <h2 style={{ textAlign: align }}>{title}</h2>}
-        {excerpt && <p style={{ textAlign: align }}>{excerpt}</p>}
+      <div
+        className={styles.headingWrap}
+        style={{
+          textAlign: align,
+          margin: align === "center" ? "2em auto" : "2em 0",
+        }}
+        {...rest}
+      >
+        {lead && (
+          <p style={{ color: color ? color : "currentColor" }}>{lead}</p>
+        )}
+        {title && <h2 {...titleProps}>{title}</h2>}
+        {excerpt && (
+          <p style={{ color: color ? color : "var(--gray100)" }}>{excerpt}</p>
+        )}
       </div>
     </>
   );

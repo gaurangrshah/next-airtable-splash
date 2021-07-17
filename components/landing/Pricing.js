@@ -5,22 +5,25 @@ import styles from "../../styles/landing/Pricing.module.scss";
 
 export const PricesHeading = ({ block }) => {
   return (
-    <Container className={styles.pricesHeading}>
-      <h2 style={{ width: "80%", fontSize: "xx-large", margin: "0 auto" }}>
-        {block.title}
-      </h2>
-      <p style={{ width: "60%", margin: "2em auto", lineHeight: 1.6 }}>
-        {block.excerpt}
-      </p>
+    <Container className={styles.prices_heading}>
+      <h2>{block.title}</h2>
+      <p>{block.excerpt}</p>
     </Container>
   );
 };
 
 export const Pricing = ({ data, render = renderPricingCard }) => {
+  const [pricesHeading, ...restPricing] = data.sort((a, b) =>
+    a.block.order > b.block.order ? 1 : -1
+  );
   return (
     <>
-      <Container className={styles.pricingContainer}>
-        <Row>{data.map(render)}</Row>
+      <PricesHeading block={pricesHeading.block} />
+      <Container className={styles.prices}>
+        <Row className='fluid'>
+          {/* we know the array always has 3 prices in it -- use sort to target the middle price as the featured price */}
+          {restPricing.sort((a, b) => (a.title > b.title ? -1 : 1)).map(render)}
+        </Row>
       </Container>
     </>
   );
@@ -30,15 +33,15 @@ export const PricingCard = ({ pricing, isFeatured }) => {
   return (
     <>
       <div
-        className={styles.cardWrap}
+        className={styles.price_card}
         style={{
           width: isFeatured ? "1200px" : "100%",
-          border: isFeatured ? "2px solid green" : "none",
+          border: isFeatured ? "2px solid var(--secondary)" : "none",
         }}
       >
         <div className={styles.pricepoint}>
           <p>{pricing.block.lead}</p>
-          <h2>{pricing.block.title}</h2>
+          <h2>${pricing.block.title}</h2>
           <small>{pricing.block.excerpt}</small>
           <br />
           <p className='excerpt'>{pricing.block.content}</p>
@@ -50,7 +53,10 @@ export const PricingCard = ({ pricing, isFeatured }) => {
           highlight={isFeatured}
         />
         <div>
-          <Link className="button primary" href={pricing.block.links.href}>
+          <Link
+            className={`button primary ${isFeatured ? "" : "outline"}`}
+            href={pricing.block.links.href}
+          >
             {pricing.block.links.title}
           </Link>
         </div>
@@ -64,7 +70,8 @@ function renderPricingCard(pricing, i) {
     <PricingCard
       key={`${pricing.id}-${i}`}
       pricing={pricing}
-      isFeatured={i === 1}
+      // price at index: 1 is the featured price value.
+      isFeatured={i === 1} // used to highlight the featured pricepoint
     />
   );
 }

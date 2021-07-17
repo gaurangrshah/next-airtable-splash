@@ -1,4 +1,4 @@
-.pricesHeading {
+.prices_heading {
   text-align: center;
   padding: 3em 0;
   h2 {
@@ -13,17 +13,19 @@
   }
 }
 
-.pricesContainer {
+.prices {
   text-align: center;
   padding: 3em 0;
-  border: 1px solid red;
-  div {
-    margin: 1em 2em;
-    gap: 0.25em;
+  div[class*="row"] {
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 4em auto;
   }
 }
 
-.cardWrap {
+.price_card {
+  flex: 0 0 300px;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,7 +35,14 @@
   text-align: center;
   box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1),
     0px 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+    @media (max-width: 720px) {
+      --modular-scale: 1.2;
+      margin: 1em 0 ;
+    }
 }
+
+
 
 .pricepoint {
   h2 {

@@ -5,6 +5,9 @@
   font-weight: 300;
   line-height: 1.4;
   text-align: center;
+  @media (max-width: 540px) {
+    max-width: 80%;
+  }
   em {
     text-align: center;
     font-size: large;

@@ -1,7 +1,18 @@
-.brandHeading {
-  font-size: medium;
+.heading {
+  font-size: large;
+  margin-top: 3em;
+  padding: 1em 0;
 }
-.brandRow {
+.row {
+  position: relative;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 24px;
+  gap: 3em;
+  margin-bottom: 3em;
+}
+
+.brandIcon {
+  max-width: 100px;
+  border: var(--debug)
 }

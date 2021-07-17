@@ -10,7 +10,7 @@ import {
   RiskCta,
   Testimonial,
   PricesHeading,
-  UrgencyCta,
+  FinalCta,
 } from "../components/landing";
 
 import { PageBuild, sortRows } from "../utils/data-helpers";
@@ -34,10 +34,6 @@ export default function Landing({ page }) {
 
   const [featuredTestimonial] = landingFeaturedTestimonial;
 
-  const [pricesHeading, ...restPricing] = landingPricing.sort((a, b) =>
-    a.block.order > b.block.order ? 1 : -1
-  );
-
   return (
     <div className={styles.pageWrapper}>
       <SEO seo={seo} />
@@ -48,15 +44,13 @@ export default function Landing({ page }) {
           <Container>{<BrandList data={landingBrandList} />}</Container>
         </Section>
         <Section className='secondary-light'>
-          <Container>
             <BenefitsCards
               headingBlock={landingBenefitsIntro[0].block}
-              data={landingBenefits.sort((a, b) =>
                 // sort by block order ASC
+              data={landingBenefits.sort((a, b) =>
                 a.block.order > b.block.order ? 1 : -1
               )}
             />
-          </Container>
           <Testimonial block={featuredTestimonial.block} />
         </Section>
         <Section>
@@ -93,20 +87,13 @@ export default function Landing({ page }) {
           </div>
         </Section>
         <Section>
-          <PricesHeading block={pricesHeading.block} />
-
           <Container>
-            <Pricing
-              // we know the array always has 3 prices in it
-              data={restPricing.sort((a, b) => (a.title > b.title ? 1 : -1))}
-              // so if we sort it by the price, then the middle value
-              // at index: 1 is the featured price value.
-            />
+            <Pricing data={landingPricing} />
           </Container>
         </Section>
         <Section className='primary-lighter'>
           <Container style={{ margin: "4em auto" }}>
-            <UrgencyCta block={landingCtaUrgency[0].block} />
+            <FinalCta block={landingCtaUrgency[0].block} />
           </Container>
         </Section>
       </main>

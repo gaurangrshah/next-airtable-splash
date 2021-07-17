@@ -14,9 +14,16 @@
   }
   img {
     margin: 6em 0;
-
+    transform: scale(0.8);
+    transition: transform 0.2s;
+  }
+  img:hover {
+    transform: scale(1);
+    transition: 0.2s transform ease-in;
   }
 }
+
+
 
 .btnWrap {
   width: 10em;

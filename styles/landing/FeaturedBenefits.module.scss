@@ -2,32 +2,33 @@
   padding: 0 2em;
   width: 90%;
   margin: 0 auto;
-  // justify-content: center;
+  @media (max-width: 720px) {
+    flex-direction: column;
+    text-align: center;
+
+  }
+  &img {
+    position: relative;
+    display: block;
+    width: 100%;
+    // padding: 4em;
+    margin: 0 auto;
+    border: 1px solid red;
+  }
 }
 
 .benefit.alternate {
   flex-direction: row-reverse;
   border-radius: 25px;
-}
-
-.imgHolder {
-  position: relative;
-  width: 100%;
-  padding: 4em;
-  margin: 0 auto;
-  img {
-    display: block;
-    // width: 100%;
-    // max-width: 300px;
-    max-height: 20vh;
+  @media (max-width: 720px) {
+    flex-direction: column;
+    text-align: center;
   }
 }
 
 .contentHolder {
   width: 100%;
   margin: 0 auto;
-  // border: 1px solid red;
-
   h3 {
     line-height: 1.4;
   }

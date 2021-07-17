@@ -2,7 +2,7 @@ import { Link } from "../Link";
 import { Row } from "../Containers";
 import { SectionHeading } from "./SectionHeading";
 
-export const UrgencyCta = ({ block }) => {
+export const FinalCta = ({ block }) => {
   return (
     <Row
       className='imgHolder'

@@ -38,8 +38,6 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-
-
 *,
 *::before,
 *::after {
@@ -47,7 +45,7 @@ body {
 }
 
 h1 {
-  font-size: calc(var(--modular-scale) * 2.6 * var(--base-font-size));
+  font-size: calc(var(--modular-scale) * 2.3 * var(--base-font-size));
 }
 h2 {
   font-size: calc(var(--modular-scale) * 2 * var(--base-font-size));
@@ -104,6 +102,11 @@ a.button {
   color: currentColor;
 }
 
+a.button.outline {
+  background: none;
+  border: 1px solid currentColor;
+}
+
 .primary {
   background: var(--primary);
   color: var(--dark);
@@ -154,30 +157,31 @@ a.button {
 @media (min-width: 540px) and (max-width: 720px) {
   :root {
     --modular-scale: 0.5;
-    --border-color: blue;
     --mw: var(--breakpoint-sm);
+    --border-color: blue;
   }
 }
+
 @media (min-width: 720px) and (max-width: 960px) {
   :root {
     --modular-scale: 0.95;
-    --border-color: green;
     --mw: var(--breakpoint-lg);
+    --border-color: green;
   }
 }
 
 @media (min-width: 960px) and (max-width: 1140px) {
   :root {
     --modular-scale: 1.414;
-    --border-color: yellow;
     --mw: var(--breakpoint-lg);
+    --border-color: yellow;
   }
 }
 
 @media (min-width: 1140px) {
   :root {
     --modular-scale: 1.46;
-    --border-color: lightblue;
     --mw: var(--breakpoint-xl);
+    --border-color: lightblue;
   }
 }
