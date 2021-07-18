@@ -20,6 +20,7 @@ export const FeaturedBenefit = ({ block, alternate, data }) => {
           layout='intrinsic'
           width={1180}
           height={920}
+          placeholder='blur'
         />
         <div className={styles.contentHolder}>
           <h3>{block.title}</h3>
