@@ -25,7 +25,6 @@ export function Hero({ block }) {
         layout='intrinsic'
         width={600}
         height={381.5}
-        placeholder='blur'
       />
     </Container>
   );

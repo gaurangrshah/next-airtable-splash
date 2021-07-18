@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { Row } from "../Containers";
 import { Link } from "../Link";
 
@@ -8,7 +10,12 @@ export const RiskCta = ({ block }) => {
     <>
       <Row className={styles.riskRow}>
         <div className={styles.imgHolder}>
-          <img src={block.media.url[0]} alt={block.media.alt} height='80px' />
+          <Image
+            src={block.media.url[0]}
+            alt={block.media.alt}
+            height='100px'
+            width='100px'
+          />
         </div>
         <div>
           <h4>{block.title}</h4>

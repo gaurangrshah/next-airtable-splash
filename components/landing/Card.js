@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "../../styles/landing/Card.module.scss";
+// import blob from "../../public/blob-accent-light.png";
 
 export function Card({ block, ...props }) {
   return (
@@ -9,6 +10,7 @@ export function Card({ block, ...props }) {
         alt={block.media.alt}
         width='220px'
         height='220px'
+        style={{ backgroundImage: "/blob-primary-light.png" }}
       />
       <h4>{block.title}</h4>
       <p>{block.excerpt}</p>

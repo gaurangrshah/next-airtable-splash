@@ -22,6 +22,10 @@
     font-size: 0.95em;
     color: var(--gray100);
   }
+  img {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
 .benefitsRow {

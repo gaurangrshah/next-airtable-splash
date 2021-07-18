@@ -1,8 +1,9 @@
+import Image from "next/image";
 import { Link } from "../Link";
 import { Row } from "../Containers";
 import { SectionHeading } from "./SectionHeading";
 
-export const FinalCta = ({ block }) => {
+export const FooterCta = ({ block }) => {
   return (
     <Row
       className='imgHolder'
@@ -12,7 +13,13 @@ export const FinalCta = ({ block }) => {
         justifyContent: "center",
       }}
     >
-      <img src={block.media.url[0]} alt={block.media.alt} width='300px' />
+      <Image
+        src={block.media.url[0]}
+        alt={block.media.alt}
+        layout='intrinsic'
+        width='300px'
+        height='286px'
+      />
       <SectionHeading
         title={block.title}
         excerpt={block.excerpt}
