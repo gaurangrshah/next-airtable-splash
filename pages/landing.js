@@ -19,8 +19,6 @@ import styles from "../styles/Landing.module.css";
 export default function Landing({ page = {} }) {
   const { seo, page: rows } = page;
 
-  if (!rows) return null;
-
   const [
     { landingHero },
     { landingBrandList },
