@@ -10,42 +10,10 @@ export const MarkdownJSX = ({
   return (
     <Markdown
       className={styles.markdown}
-
       {...rest}
       options={{
         overrides: {
-          span: (props) => (
-            <span className={styles.span} {...props} {...rest.span} />
-          ),
-          ul: (props) => <ul className={styles.ul} {...props} {...rest.ul} />,
-          li: (props) => <li className={styles.li} style={highlight ? {...highlightStyles} : {}} {...props} {...rest.li} />,
-        },
-      }}
-    >
-      {markdown}
-    </Markdown>
-  );
-};
-
-
-const highlightStyles = {
-  fontWeight: 'bold',
-  fontSize: 'medium'
-}
-
-export const MarkdownListJSX = ({
-  markdown = "",
-  type = "list",
-  highlight = false,
-  overrides,
-  ...rest
-}) => {
-  return (
-    <Markdown
-      className={styles.markdown}
-      {...rest}
-      options={{
-        overrides: {
+          // overrides allow defining of specific components to be used to render each element
           span: (props) => (
             <span className={styles.span} {...props} {...rest.span} />
           ),
@@ -58,11 +26,15 @@ export const MarkdownListJSX = ({
               {...rest.li}
             />
           ),
-          ...overrides
         },
       }}
     >
       {markdown}
     </Markdown>
   );
+};
+
+const highlightStyles = {
+  fontWeight: "bold",
+  fontSize: "medium",
 };

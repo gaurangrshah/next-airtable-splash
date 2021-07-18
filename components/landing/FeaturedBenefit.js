@@ -1,6 +1,7 @@
 import Image from "next/image";
+
 import { Row } from "../Containers";
-import { MarkdownListJSX } from "../MarkdownJsx";
+import { MarkdownJSX } from "../MarkdownJsx";
 
 import styles from "../../styles/landing/FeaturedBenefits.module.scss";
 
@@ -24,7 +25,7 @@ export const FeaturedBenefit = ({ block, alternate, data }) => {
         <div>
           <h3>{block.title}</h3>
           <p>{block.excerpt}</p>
-          <MarkdownListJSX
+          <MarkdownJSX
             className={styles.markdown}
             markdown={block.bullets}
             overrides={{

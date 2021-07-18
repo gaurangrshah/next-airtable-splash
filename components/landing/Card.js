@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import styles from "../../styles/landing/Card.module.scss";
 
 export function Card({ block, ...props }) {

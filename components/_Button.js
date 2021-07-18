@@ -6,8 +6,6 @@ export function Button({ variant = "primary", ...props }) {
         onClick={() => alert("WHOOO HOO! Cha Ching ")}
         {...props}
       />
-
-
     </>
   );
 }

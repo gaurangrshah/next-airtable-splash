@@ -1,6 +1,7 @@
-import { Container, Row } from "../Containers";
 import { Link } from "../Link";
+import { Container, Row } from "../Containers";
 import { MarkdownJSX } from "../MarkdownJsx";
+
 import styles from "../../styles/landing/Pricing.module.scss";
 
 export const PricesHeading = ({ block }) => {
@@ -21,7 +22,10 @@ export const Pricing = ({ data, render = renderPricingCard }) => {
       <PricesHeading block={pricesHeading.block} />
       <Container className={styles.prices}>
         <Row className='fluid'>
-          {/* we know the array always has 3 prices in it -- use sort to target the middle price as the featured price */}
+          {/*
+          the array will always have 3 prices in it
+          -- use sort to target the middle price as the featured price
+          */}
           {restPricing.sort((a, b) => (a.title > b.title ? -1 : 1)).map(render)}
         </Row>
       </Container>

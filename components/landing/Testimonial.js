@@ -1,6 +1,6 @@
 import Image from "next/image";
+
 import styles from "../../styles/landing/Testimonial.module.scss";
-import { Row } from "../Containers";
 
 export const Testimonial = ({ block }) => {
   return (

@@ -1,7 +1,8 @@
 import { Container, Row } from "../Containers";
 import { Card } from "./Card";
-import styles from "../../styles/landing/Card.module.scss";
 import { SectionHeading } from "./SectionHeading";
+
+import styles from "../../styles/landing/Card.module.scss";
 
 export function BenefitsCards({ headingBlock, data, render = renderBenefits }) {
   return (

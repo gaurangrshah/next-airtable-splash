@@ -15,7 +15,6 @@ export const SectionHeading = ({
       <div
         className={styles.headingWrap}
         style={{
-          textAlign: align,
           margin: align === "center" ? "2em auto" : "2em 0",
         }}
         {...rest}

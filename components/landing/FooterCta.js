@@ -1,18 +1,14 @@
 import Image from "next/image";
+
 import { Link } from "../Link";
 import { Row } from "../Containers";
 import { SectionHeading } from "./SectionHeading";
 
+import styles from "../../styles/landing/FooterCta.module.scss";
+
 export const FooterCta = ({ block }) => {
   return (
-    <Row
-      className='imgHolder'
-      style={{
-        width: "100%",
-        flexDirection: "column",
-        justifyContent: "center",
-      }}
-    >
+    <Row className={styles.imgRow}>
       <Image
         src={block.media.url[0]}
         alt={block.media.alt}

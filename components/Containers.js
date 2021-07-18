@@ -1,8 +1,7 @@
 import styles from "../styles/Containers.module.scss";
 /**
  * USAGE:
-   ⚠️ This components in thisfile utilize a unique but simple api for merging classNames
-    see comments below for more info.
+   ⚠️ This components in this file utilize a unique but simple api for merging classNames
     // @link:  https://stackoverflow.com/questions/57523884/how-to-combine-multiple-classnames-in-react
  */
 
