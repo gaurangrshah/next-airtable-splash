@@ -9,8 +9,7 @@ import {
   Pricing,
   RiskCta,
   Testimonial,
-  PricesHeading,
-  FinalCta,
+  FooterCta,
 } from "../components/landing";
 
 import { PageBuild, sortRows } from "../utils/data-helpers";
@@ -82,9 +81,9 @@ export default function Landing({ page = {} }) {
             />
           </Container>
           <div style={{ width: "100%", background: "var(--secondary-light)" }}>
-            <Container>
-              <RiskCta block={landingCtaRisk[0].block} />
-            </Container>
+            {/* <Container> */}
+            <RiskCta block={landingCtaRisk[0].block} />
+            {/* </Container> */}
           </div>
         </Section>
         <Section>
@@ -94,7 +93,7 @@ export default function Landing({ page = {} }) {
         </Section>
         <Section className='primary-lighter'>
           <Container style={{ margin: "4em auto" }}>
-            <FinalCta block={landingCtaUrgency[0].block} />
+            <FooterCta block={landingCtaUrgency[0].block} />
           </Container>
         </Section>
       </main>

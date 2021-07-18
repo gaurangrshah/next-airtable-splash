@@ -10,11 +10,18 @@
   }
   img {
     background: var(--primary);
-    padding: .25em;
+    padding: 0.25em;
     border-radius: 50%;
   }
   em {
     text-align: center;
     font-size: large;
+  }
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin: 2em 0;
   }
 }

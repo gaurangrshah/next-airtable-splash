@@ -2,7 +2,7 @@ export * from "./BenefitsCards";
 export * from "./BrandList";
 export * from "./Card";
 export * from "./FeaturedBenefit";
-export * from "./FinalCta";
+export * from "./FooterCta";
 export * from "./Header";
 export * from "./Hero";
 export * from "./Pricing";

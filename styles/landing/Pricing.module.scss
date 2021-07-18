@@ -10,6 +10,9 @@
     width: 60%;
     margin: 2em auto;
     line-height: 1.6;
+    @media (max-width: 720px) {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -17,14 +20,16 @@
   text-align: center;
   padding: 3em 0;
   div[class*="row"] {
-    flex-wrap: wrap;
     width: 100%;
     margin: 4em auto;
+    @media (max-width: 720px) {
+      margin: 1em auto;
+    }
   }
 }
 
 .price_card {
-  flex: 0 0 300px;
+  flex: 0 1 330px;
   max-width: 400px;
   display: flex;
   flex-direction: column;
@@ -36,13 +41,11 @@
   box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1),
     0px 2px 4px -1px rgba(0, 0, 0, 0.06);
 
-    @media (max-width: 720px) {
-      --modular-scale: 1.2;
-      margin: 1em 0 ;
-    }
+  @media (max-width: 720px) {
+    --modular-scale: 1.2;
+    margin: 1em 0;
+  }
 }
-
-
 
 .pricepoint {
   h2 {

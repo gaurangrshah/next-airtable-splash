@@ -19,7 +19,6 @@ export function renderBrands({ block }) {
       src={block?.media?.url[0]}
       alt={block?.media?.alt}
       layout='intrinsic'
-      placeholder='blur'
       width={60}
       height={54.4}
     />
