@@ -16,8 +16,11 @@ import {
 import { PageBuild, sortRows } from "../utils/data-helpers";
 import styles from "../styles/Landing.module.css";
 
-export default function Landing({ page }) {
+export default function Landing({ page = {} }) {
   const { seo, page: rows } = page;
+
+  if(!rows) return null
+
   const [
     { landingHero },
     { landingBrandList },
