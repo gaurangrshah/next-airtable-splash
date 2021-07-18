@@ -8,6 +8,11 @@
   @media (max-width: 540px) {
     max-width: 80%;
   }
+  img {
+    background: var(--primary);
+    padding: .25em;
+    border-radius: 50%;
+  }
   em {
     text-align: center;
     font-size: large;

@@ -12,8 +12,8 @@ export const Testimonial = ({ block }) => {
           <img
             src={block.media.url[0]}
             alt={block.media.alt}
-            width='32'
-            height='32'
+            width='48'
+            height='48'
           />
           <h5 style={{ fontSize: "medium" }}>{block.title},</h5>
           <strong>{block.lead}</strong> of
