@@ -19,7 +19,7 @@ import styles from "../styles/Landing.module.css";
 export default function Landing({ page = {} }) {
   const { seo, page: rows } = page;
 
-  if(!rows) return null
+  if (!rows) return null;
 
   const [
     { landingHero },
@@ -47,13 +47,13 @@ export default function Landing({ page = {} }) {
           <Container>{<BrandList data={landingBrandList} />}</Container>
         </Section>
         <Section className='secondary-light'>
-            <BenefitsCards
-              headingBlock={landingBenefitsIntro[0].block}
-                // sort by block order ASC
-              data={landingBenefits.sort((a, b) =>
-                a.block.order > b.block.order ? 1 : -1
-              )}
-            />
+          <BenefitsCards
+            headingBlock={landingBenefitsIntro[0].block}
+            // sort by block order ASC
+            data={landingBenefits.sort((a, b) =>
+              a.block.order > b.block.order ? 1 : -1
+            )}
+          />
           <Testimonial block={featuredTestimonial.block} />
         </Section>
         <Section>
