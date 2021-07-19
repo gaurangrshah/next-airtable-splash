@@ -48,7 +48,7 @@ export const PricingCard = ({ pricing, isFeatured }) => {
           <h2>${pricing.block.title}</h2>
           <small>{pricing.block.excerpt}</small>
           <br />
-          <p className='excerpt'>{pricing.block.content}</p>
+          <p className={styles.excerpt}>{pricing.block.content}</p>
         </div>
 
         <MarkdownJSX

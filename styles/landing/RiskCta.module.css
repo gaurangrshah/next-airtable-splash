@@ -1,8 +1,13 @@
 .riskRow {
   padding: 1em 2em;
   text-align: center;
+  justify-content: center;
+}
+.riskRow h4 {
+  margin-top: 2em;
 }
 .riskRow p {
+  margin: 2em 0;
   font-size: medium;
 }
 

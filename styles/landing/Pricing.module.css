@@ -42,6 +42,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1em;
   padding: 2em;
   border-radius: 6px;
   text-align: center;
@@ -59,12 +60,13 @@
 .pricepoint h2 {
   line-height: 1.2;
   margin: 0;
-  padding: 0;
+  padding: 0.25em 0;
 }
 .pricepoint small {
   color: var(--gray100);
 }
 .pricepoint .excerpt {
+
   max-width: 70%;
   margin: 1.5em auto;
   color: var(--gray100);
