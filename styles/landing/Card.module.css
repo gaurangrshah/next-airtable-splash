@@ -7,7 +7,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 2em;
+  gap: 2em; /* not supported in older versions of safari */
   margin-bottom: 3em;
 }
 @media (max-width: 720px) {

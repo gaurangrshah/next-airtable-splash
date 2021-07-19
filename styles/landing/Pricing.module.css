@@ -42,7 +42,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1em;
+  gap: 1em; /* not supported in older versions of safari */
   padding: 2em;
   border-radius: 6px;
   text-align: center;
