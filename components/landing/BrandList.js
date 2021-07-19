@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import styles from "../../styles/landing/BrandList.module.scss";
+import styles from "../../styles/landing/BrandList.module.css";
 
 export function BrandList({ data, render = renderBrands }) {
   return (
@@ -20,6 +20,7 @@ export function renderBrands({ block }) {
       src={block?.media?.url[0]}
       alt={block?.media?.alt}
       layout='intrinsic'
+      loading='eager'
       width={60}
       height={54.4}
     />

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Row } from "../Containers";
 import { MarkdownJSX } from "../MarkdownJsx";
 
-import styles from "../../styles/landing/FeaturedBenefits.module.scss";
+import styles from "../../styles/landing/FeaturedBenefits.module.css";
 
 export const FeaturedBenefit = ({ block, alternate, data }) => {
   return (
@@ -22,7 +22,7 @@ export const FeaturedBenefit = ({ block, alternate, data }) => {
           height={920}
         />
 
-        <div>
+        <div className={styles.content}>
           <h3>{block.title}</h3>
           <p>{block.excerpt}</p>
           <MarkdownJSX

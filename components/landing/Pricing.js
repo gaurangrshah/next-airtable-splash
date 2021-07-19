@@ -2,7 +2,7 @@ import { Link } from "../Link";
 import { Container, Row } from "../Containers";
 import { MarkdownJSX } from "../MarkdownJsx";
 
-import styles from "../../styles/landing/Pricing.module.scss";
+import styles from "../../styles/landing/Pricing.module.css";
 
 export const PricesHeading = ({ block }) => {
   return (

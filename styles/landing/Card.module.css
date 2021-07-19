@@ -7,28 +7,30 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  @media (max-width: 720px) {
+}
+@media (max-width: 720px) {
+  .card {
     margin: 3em 0;
   }
-  img {
-    max-height: 200px;
-  }
+}
+.cardimg {
+  max-height: 200px;
+}
 
-  h4 {
-    padding: 0.5em 1em;
-    color: var(--gray400);
-  }
+.card h4 {
+  padding: 0.5em 1em;
+  color: var(--gray400);
+}
 
-  p {
-    padding: 0.25em 0.5em;
-    margin-top: 0;
-    font-size: 0.95em;
-    color: var(--gray100);
-  }
-  img {
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+.card p {
+  padding: 0.25em 0.5em;
+  margin-top: 0;
+  font-size: 0.95em;
+  color: var(--gray100);
+}
+.card img {
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .benefitsRow {

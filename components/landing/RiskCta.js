@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Row } from "../Containers";
 import { Link } from "../Link";
 
-import styles from "../../styles/landing/RiskCta.module.scss";
+import styles from "../../styles/landing/RiskCta.module.css";
 
 export const RiskCta = ({ block }) => {
   return (
@@ -13,6 +13,8 @@ export const RiskCta = ({ block }) => {
           <Image
             src={block.media.url[0]}
             alt={block.media.alt}
+            layout='intrinsic'
+            loading='lazy'
             height='100px'
             width='100px'
           />

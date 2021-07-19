@@ -1,9 +1,9 @@
 .riskRow {
   padding: 1em 2em;
   text-align: center;
-  p {
-    font-size: medium;
-  }
+}
+.riskRow p {
+  font-size: medium;
 }
 
 .imgHolder {
@@ -12,9 +12,9 @@
 
 .btnWrap {
   margin: 0 2em;
+}
 
-  button {
-    height: 3.2em;
-    padding: 0 0.25em;
-  }
+.btnWrap button {
+  height: 3.2em;
+  padding: 0 0.25em;
 }

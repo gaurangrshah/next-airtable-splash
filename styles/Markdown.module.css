@@ -20,13 +20,8 @@
   font-weight: 700;
 }
 
-.list li {
-  color: var(--gray200);
-  /* padding-left: 1em; */
-  /* font-size: 0.65em; */
-  font-size: initial;
-}
-.list li:first-child {
-  color: var(--gray200);
-  font-size: initial;
+@media (max-width: 720px) {
+  .markdown li {
+    font-size: 1.2em;
+  }
 }

@@ -4,7 +4,7 @@ import { Container } from "../Containers";
 import { Link } from "../Link";
 import { SectionHeading } from "./SectionHeading";
 
-import styles from "../../styles/landing/Hero.module.scss";
+import styles from "../../styles/landing/Hero.module.css";
 
 export function Hero({ block }) {
   return (
@@ -24,6 +24,7 @@ export function Hero({ block }) {
         src={block?.media?.url[0]}
         alt={block?.media?.alt}
         layout='intrinsic'
+        loading="eager"
         width={600}
         height={381.5}
       />

@@ -4,7 +4,7 @@ import { Link } from "../Link";
 import { Row } from "../Containers";
 import { SectionHeading } from "./SectionHeading";
 
-import styles from "../../styles/landing/FooterCta.module.scss";
+import styles from "../../styles/landing/FooterCta.module.css";
 
 export const FooterCta = ({ block }) => {
   return (
@@ -13,6 +13,7 @@ export const FooterCta = ({ block }) => {
         src={block.media.url[0]}
         alt={block.media.alt}
         layout='intrinsic'
+        loading='lazy'
         width='300px'
         height='286px'
       />

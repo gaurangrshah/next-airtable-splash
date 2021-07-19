@@ -29,6 +29,7 @@ export const ListItem = ({ img, data, children }) => {
         <span className={styles.icon}>
           <Image
             layout='intrinsic'
+            loading='lazy'
             src={img?.url[0]}
             alt={img?.alt}
             width='28px'

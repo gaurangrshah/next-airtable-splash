@@ -18,9 +18,14 @@
   position: relative;
   width: 80%;
   margin: 2em auto;
-  display: flex;
+  display: flex !important;
   flex-direction: row;
   align-items: center;
+}
+
+.row:after,
+.row:before {
+  display: none !important;
 }
 
 @media (max-width: 720px) {
