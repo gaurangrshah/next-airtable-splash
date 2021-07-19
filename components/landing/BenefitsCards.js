@@ -19,7 +19,7 @@ export function BenefitsCards({ headingBlock, data, render = renderBenefits }) {
           }}
         />
       </Container>
-      <Row className={styles.benefitsRow}>{data.map(renderBenefits)}</Row>
+      <Row className={styles.benefitsRow}>{data.map(render)}</Row>
     </>
   );
 }

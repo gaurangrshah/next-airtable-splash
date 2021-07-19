@@ -8,11 +8,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3em;
+  gap: 3em; /* not supported in older versions of safari */
   margin-bottom: 3em;
-}
-
-.brandIcon {
-  max-width: 100px;
-  border: var(--debug)
 }

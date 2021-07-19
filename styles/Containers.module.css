@@ -39,4 +39,12 @@
   display: block;
   width: 100%;
   min-height: 20vh;
+  margin: 4em 0;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+.section:first-child {
+  margin-top: 0;
 }

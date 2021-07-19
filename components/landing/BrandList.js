@@ -14,7 +14,6 @@ export function BrandList({ data, render = renderBrands }) {
 export function renderBrands({ block }) {
   return (
     <Image
-      className={styles.brandIcon}
       key={block?.media?.id}
       title={block?.media?.title}
       src={block?.media?.url[0]}
