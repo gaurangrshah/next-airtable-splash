@@ -10,6 +10,7 @@ export function Card({ block, ...props }) {
         alt={block.media.alt}
         width='220px'
         height='220px'
+        style={{ backgroundImage: "/blob-primary-light.png" }}
       />
       <h4>{block.title}</h4>
       <p>{block.excerpt}</p>

@@ -1,5 +1,4 @@
 import Image from "next/image";
-
 import { Link } from "../Link";
 import { Row } from "../Containers";
 import { SectionHeading } from "./SectionHeading";

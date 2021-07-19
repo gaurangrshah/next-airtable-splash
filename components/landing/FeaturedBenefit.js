@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { Row } from "../Containers";
-import { MarkdownJSX } from "../MarkdownJsx";
+import { MarkdownListJSX } from "../MarkdownJsx";
 
 import styles from "../../styles/landing/FeaturedBenefits.module.css";
 
