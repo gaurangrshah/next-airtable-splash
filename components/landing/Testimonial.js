@@ -1,7 +1,5 @@
 import Image from "next/image";
 
-import { Container } from '../Containers';
-
 import styles from "../../styles/landing/Testimonial.module.css";
 
 export const Testimonial = ({ block }) => {
