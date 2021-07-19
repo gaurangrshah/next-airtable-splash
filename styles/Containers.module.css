@@ -18,14 +18,14 @@
   position: relative;
   width: 80%;
   margin: 2em auto;
-  display: flex !important;
+  display: flex;
   flex-direction: row;
   align-items: center;
 }
 
 .row:after,
 .row:before {
-  display: none !important;
+  display: none;
 }
 
 @media (max-width: 720px) {
