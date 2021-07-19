@@ -1,4 +1,4 @@
-import styles from "../../styles/landing/SectionHeading.module.scss";
+import styles from "../../styles/landing/SectionHeading.module.css";
 
 export const SectionHeading = ({
   lead,

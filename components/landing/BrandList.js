@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import styles from "../../styles/landing/BrandList.module.scss";
+import styles from "../../styles/landing/BrandList.module.css";
 
 export function BrandList({ data, render = renderBrands }) {
   return (

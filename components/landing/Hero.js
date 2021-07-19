@@ -4,7 +4,7 @@ import { Container } from "../Containers";
 import { Link } from "../Link";
 import { SectionHeading } from "./SectionHeading";
 
-import styles from "../../styles/landing/Hero.module.scss";
+import styles from "../../styles/landing/Hero.module.css";
 
 export function Hero({ block }) {
   return (

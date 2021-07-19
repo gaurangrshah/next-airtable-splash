@@ -10,7 +10,7 @@
   justify-content: flex-start;
   align-items: center;
   width: calc(100vw - 16px);
-  height: 100vh;
+  min-height: 100vh; /* required for safari browser*/
   overflow-x: hidden;
 }
 

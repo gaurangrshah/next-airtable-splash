@@ -1,4 +1,4 @@
-import styles from "../styles/Containers.module.scss";
+import styles from "../styles/Containers.module.css";
 /**
  * USAGE:
    ⚠️ This components in this file utilize a unique but simple api for merging classNames

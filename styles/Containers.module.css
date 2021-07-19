@@ -23,6 +23,11 @@
   align-items: center;
 }
 
+.row:after,
+.row:before {
+  display: none;
+}
+
 @media (max-width: 720px) {
   .row {
     flex-direction: column;

@@ -4,7 +4,7 @@ import { Link } from "../Link";
 import { Row } from "../Containers";
 import { SectionHeading } from "./SectionHeading";
 
-import styles from "../../styles/landing/FooterCta.module.scss";
+import styles from "../../styles/landing/FooterCta.module.css";
 
 export const FooterCta = ({ block }) => {
   return (

@@ -1,15 +1,25 @@
 .benefit {
   width: 100%;
   padding: 0 2em;
-  &.alternate {
-    flex-direction: row-reverse;
-    @media (max-width: 720px) {
-      flex-direction: column;
-    }
-  }
-  @media (max-width: 720px) {
+}
+
+.benefit.alternate {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 720px) {
+  .benefit,
+  .benefit.alternate {
     flex-direction: column;
   }
+}
+
+.content h3 {
+  margin: 2em 0;
+}
+
+.content p {
+  margin: 2em 0;
 }
 
 .markdown {
@@ -21,4 +31,11 @@
   align-items: flex-start;
   font-size: 0.85em;
   line-height: 3;
+}
+
+
+@media (max-width: 720px) {
+  .markdown {
+    font-size: 1.2em;
+  }
 }

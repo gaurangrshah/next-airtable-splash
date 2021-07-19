@@ -1,6 +1,6 @@
 import { Link } from "../Link";
 
-import styles from "../../styles/landing/Header.module.scss";
+import styles from "../../styles/landing/Header.module.css";
 
 export function Header({ brandName }) {
   return (

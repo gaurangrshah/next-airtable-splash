@@ -1,0 +1,30 @@
+.testimonial {
+  max-width: 50%;
+  margin: 0 auto;
+  color: var(--gray100);
+  font-weight: 300;
+  line-height: 1.4;
+  text-align: center;
+}
+.testimonial img {
+  background: var(--primary);
+  padding: 0.25em;
+  border-radius: 50%;
+}
+.testimonial em {
+  text-align: center;
+  font-size: large;
+}
+.testimonial .row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin: 2em 0;
+}
+
+@media (max-width: 540px) {
+  .testimonial {
+    max-width: 80%;
+  }
+}

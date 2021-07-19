@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Row } from "../Containers";
 import { Link } from "../Link";
 
-import styles from "../../styles/landing/RiskCta.module.scss";
+import styles from "../../styles/landing/RiskCta.module.css";
 
 export const RiskCta = ({ block }) => {
   return (
