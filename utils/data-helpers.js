@@ -89,7 +89,7 @@ export function Seo(row) {
   };
 }
 
-export function Page(row) {
+export function Row(row) {
   // used to return a specific shape from requested airtable data
   // used on Landing Page ("/")
   return {
@@ -130,6 +130,6 @@ export function PageBuild(rows) {
   const seo = new Seo(rows[0]);
   return {
     seo,
-    page: rows?.length && rows?.map((row) => new Page(row)),
+    page: rows?.length && rows?.map((row) => new Row(row)),
   };
 }
