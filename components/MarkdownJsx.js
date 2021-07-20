@@ -2,15 +2,12 @@ import Markdown from "markdown-to-jsx";
 import styles from "../styles/Markdown.module.css";
 export const MarkdownJSX = ({
   markdown = "",
-  type = "list",
   highlight = false,
-  overrides,
   ...rest
 }) => {
   return (
     <Markdown
       className={styles.markdown}
-      {...rest}
       options={{
         overrides: {
           // overrides allow defining of specific components to be used to render each element
@@ -28,6 +25,7 @@ export const MarkdownJSX = ({
           ),
         },
       }}
+      {...rest}
     >
       {markdown}
     </Markdown>
