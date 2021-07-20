@@ -4,8 +4,11 @@ import {
   BenefitsCards,
   BrandList,
   FeaturedBenefit,
+  FooterCta,
   Header,
   Hero,
+  Pricing,
+  RiskCta,
   Testimonial,
 } from "../components/landing";
 
@@ -21,6 +24,12 @@ export default function Landing({ page }) {
     { landingBenefitsIntro },
     { landingBenefits },
     { landingFeaturedTestimonial },
+    { landingFeaturedBenefit1 },
+    { landingFeaturedBenefit2 },
+    { landingFeaturedBenefit3 },
+    { landingCtaRisk },
+    { landingPricing },
+    { landingCtaUrgency },
   ] = sortRows(rows);
 
   const [featuredTestimonial] = landingFeaturedTestimonial;
@@ -46,6 +55,49 @@ export default function Landing({ page }) {
               )}
             />
             <Testimonial block={featuredTestimonial.block} />
+          </Section>
+          <Section>
+            <Container>
+              <FeaturedBenefit
+                block={landingFeaturedBenefit1[0].block}
+                alternate={landingFeaturedBenefit1[0]["filter"].includes(
+                  "reverse"
+                )}
+              />
+            </Container>
+            <div style={{ width: "100%", background: "var(--primary-light)" }}>
+              <Container>
+                <FeaturedBenefit
+                  block={landingFeaturedBenefit2[0].block}
+                  alternate={landingFeaturedBenefit2[0]["filter"].includes(
+                    "reverse"
+                  )}
+                />
+              </Container>
+            </div>
+            <Container>
+              <FeaturedBenefit
+                block={landingFeaturedBenefit3[0].block}
+                alternate={landingFeaturedBenefit3[0]["filter"].includes(
+                  "reverse"
+                )}
+              />
+            </Container>
+            <div
+              style={{ width: "100%", background: "var(--secondary-light)" }}
+            >
+              <RiskCta block={landingCtaRisk[0].block} />
+            </div>
+          </Section>
+          <Section>
+            <Container>
+              <Pricing data={landingPricing} />
+            </Container>
+          </Section>
+          <Section className='primary-lighter'>
+            <Container style={{ margin: "4em auto" }}>
+              <FooterCta block={landingCtaUrgency[0].block} />
+            </Container>
           </Section>
         </main>
         <footer className={styles.footer}>

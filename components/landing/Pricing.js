@@ -23,8 +23,9 @@ export const Pricing = ({ data, render = renderPricingCard }) => {
       <Container className={styles.prices}>
         <Row className='fluid'>
           {/*
-          the array will always have 3 prices in it
+          the restPricing array will always have 3 prices in it
           -- use sort to target the middle price as the featured price
+          -- then immediately iterate over that sorted array and render each PricingCard
           */}
           {restPricing.sort((a, b) => (a.title > b.title ? -1 : 1)).map(render)}
         </Row>
