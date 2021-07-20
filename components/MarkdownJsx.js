@@ -2,7 +2,6 @@ import Markdown from "markdown-to-jsx";
 import styles from "../styles/Markdown.module.css";
 export const MarkdownJSX = ({
   markdown = "",
-  type = "list",
   highlight = false,
   overrides,
   ...rest
