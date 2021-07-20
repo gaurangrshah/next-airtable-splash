@@ -28,10 +28,6 @@ export const FeaturedBenefit = ({ block, alternate, data }) => {
           <MarkdownJSX
             className={styles.markdown}
             markdown={block.bullets}
-            overrides={{
-              ul: (props) => <ul className={styles.ul} {...props} />,
-              li: (props) => <li className={styles.li} {...props} />,
-            }}
           />
         </div>
       </Row>
