@@ -125,8 +125,7 @@ export function Row(row) {
 }
 
 export function PageBuild(rows) {
-  // handles all landing page data transformStyle
-  // returns page and seo
+  // transforms page data
   const seo = new Seo(rows[0]);
   return {
     seo,
